@@ -1,7 +1,0 @@
-D:\Assessment\BookingSystem\BookingSystem.Service\obj\Debug\net8.0\BookingSystem.Services.csproj.AssemblyReference.cache
-D:\Assessment\BookingSystem\BookingSystem.Service\obj\Debug\net8.0\BookingSystem.Services.GeneratedMSBuildEditorConfig.editorconfig
-D:\Assessment\BookingSystem\BookingSystem.Service\obj\Debug\net8.0\BookingSystem.Services.AssemblyInfoInputs.cache
-D:\Assessment\BookingSystem\BookingSystem.Service\obj\Debug\net8.0\BookingSystem.Services.AssemblyInfo.cs
-D:\Assessment\BookingSystem\BookingSystem.Service\obj\Debug\net8.0\BookingSystem.Services.csproj.CoreCompileInputs.cache
-D:\Assessment\BookingSystem\BookingSystem.Service\obj\Debug\net8.0\BookingSystem.Services.MvcApplicationPartsAssemblyInfo.cs
-D:\Assessment\BookingSystem\BookingSystem.Service\obj\Debug\net8.0\BookingSystem.Services.MvcApplicationPartsAssemblyInfo.cache
