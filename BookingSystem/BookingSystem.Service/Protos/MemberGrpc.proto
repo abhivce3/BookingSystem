@@ -1,0 +1,38 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "BookingSystem.Service.Protos";
+
+import "google/protobuf/timestamp.proto";
+import "Protos/CommonGrpc.proto";
+
+// ✅ Member Service Definition
+service MemberGrpc {
+    rpc ImportMembers (ImportMembersRequest) returns (common.ResponseBool);
+    rpc GetMemberById (GetMemberByIdRequest) returns (ResponseMember);
+}
+
+// ✅ Response Structures
+message ResponseMember {
+    bool success = 1;
+    string message = 2;
+    int32 statusCode = 3;
+    MemberDto data = 4;
+}
+
+// ✅ Member DTO
+message MemberDto {
+    int32 memberId = 1;
+    string firstName = 2;
+    string lastName = 3;
+    int32 bookingCount = 4;
+    google.protobuf.Timestamp dateJoined = 5;
+}
+
+// ✅ Request Messages
+message ImportMembersRequest {
+    bytes fileData = 1;
+}
+
+message GetMemberByIdRequest {
+    int32 memberId = 1;
+}

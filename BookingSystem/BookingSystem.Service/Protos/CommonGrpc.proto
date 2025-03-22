@@ -1,0 +1,10 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "BookingSystem.Service.Protos";
+package common;
+message ResponseBool {
+    bool success = 1;
+    string message = 2;
+    int32 statusCode = 3;
+    bool data = 4;
+}

@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Protos\CommonGrpc.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
+    <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.70.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BookingSystem.Infrastructure\BookingSystem.Infrastructure.csproj" />
+  </ItemGroup>
+
+    <ItemGroup>
+	    <Protobuf Include="Protos\CommonGrpc.proto" GrpcServices="Server" />
+	    <Protobuf Include="Protos\BookingGrpc.proto" GrpcServices="Server" />
+	    <Protobuf Include="Protos\MemberGrpc.proto" GrpcServices="Server" />
+	    <Protobuf Include="Protos\InventoryGrpc.proto" GrpcServices="Server" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,53 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "BookingSystem.Service.Protos";
+
+import "google/protobuf/timestamp.proto";
+import "Protos/CommonGrpc.proto"; 
+
+// ✅ Booking Service Definition
+service BookingGrpc {
+    rpc BookItem (BookItemRequest) returns (ResponseBooking);
+    rpc CancelBooking (CancelBookingRequest) returns (common.ResponseBool);
+    rpc GetBookingById (GetBookingByIdRequest) returns (ResponseBooking);
+    rpc GetBookings (GetBookingsRequest) returns (ResponseBookingList);
+}
+
+// ✅ Response Structure (Merged Without `baseResponse`)
+message ResponseBooking {
+    bool success = 1;
+    string message = 2;
+    int32 statusCode = 3;
+    BookingDto data = 4;
+}
+
+message ResponseBookingList {
+    bool success = 1;
+    string message = 2;
+    int32 statusCode = 3;
+    repeated BookingDto data = 4;
+}
+
+// ✅ Booking DTO
+message BookingDto {
+    int32 bookingId = 1;
+    int32 memberId = 2;
+    int32 inventoryId = 3;
+    google.protobuf.Timestamp bookingDate = 4;
+}
+
+// ✅ Request Messages
+message BookItemRequest {
+    int32 memberId = 1;
+    int32 inventoryId = 2;
+}
+
+message CancelBookingRequest {
+    int32 bookingId = 1;
+}
+
+message GetBookingByIdRequest {
+    int32 bookingId = 1;
+}
+
+message GetBookingsRequest {}

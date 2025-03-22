@@ -1,0 +1,41 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "BookingSystem.Service.Protos";
+
+import "google/protobuf/timestamp.proto";
+import "Protos/CommonGrpc.proto"; 
+
+
+
+// ✅ Inventory Service Definition
+service InventoryGrpc {
+    rpc ImportInventory (ImportInventoryRequest) returns (common.ResponseBool);
+    rpc GetInventoryById (GetInventoryByIdRequest) returns (ResponseInventory);
+}
+
+// ✅ Response Structures
+message ResponseInventory {
+    bool success = 1;
+    string message = 2;
+    int32 statusCode = 3;
+    InventoryDto data = 4;
+}
+
+// ✅ Inventory DTO
+message InventoryDto {
+    int32 inventoryId = 1;
+    string title = 2;
+    string description = 3;
+    int32 remainingCount = 4;
+    google.protobuf.Timestamp expirationDate = 5;
+
+}
+
+// ✅ Request Messages
+message ImportInventoryRequest {
+    bytes fileData = 1;
+}
+
+message GetInventoryByIdRequest {
+    int32 inventoryId = 1;
+}
