@@ -2,6 +2,7 @@
 Booking System is a gRPC-based microservices application built with .NET 8, ASP.NET Core, and MediatR, designed to manage bookings, members, and inventory efficiently. It follows clean architecture, leveraging gRPC for high-performance communication, Entity Framework Core for database access, and MediatR for CQRS.
         
 🌟 Features
+
         ✅ gRPC-based Microservices – High-performance, scalable service communication
         ✅ Booking Management – Create, cancel, and retrieve available bookings(Not Cancelled) 
         ✅ Inventory Management – Import inventory data and retrieve inventory details
